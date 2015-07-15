@@ -1,0 +1,7 @@
+name: DeathArena
+main: DeathArenaMain
+version: 0.1
+commands:
+    class:
+        usage:
+        description:
