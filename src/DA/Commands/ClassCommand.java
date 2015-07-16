@@ -1,6 +1,7 @@
 package DA.Commands;
 
 
+import DA.ItemStacks;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -11,8 +12,20 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.HashMap;
+import java.util.UUID;
+
 
 public class ClassCommand implements CommandExecutor {
+
+    public HashMap<UUID, Long> rangerList = new HashMap<UUID, Long>();
+    public HashMap<UUID, Long> alchemistList = new HashMap<UUID, Long>();
+
+    public static HashMap tankList() {
+        HashMap<UUID, Long> tankList = new HashMap<UUID, Long>();
+
+      return tankList;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String args[]) {
@@ -63,6 +76,7 @@ public class ClassCommand implements CommandExecutor {
                     bow.addEnchantment(Enchantment.ARROW_KNOCKBACK, 1);
 
                     pi.setItem(0, bow);
+                    pi.setItem(1, ItemStacks.food());
                     pi.setItem(27, arrow);
                     pi.setItem(36, boot);
                     pi.setItem(37, leg);
@@ -115,6 +129,7 @@ public class ClassCommand implements CommandExecutor {
                     pi.setItem(18, tear);
                     pi.setItem(19, bpowder);
 
+                    pi.setItem(2, ItemStacks.food());
                     pi.setItem(1, gapple);
                     pi.setItem(0, sword);
                     pi.setItem(36, boot);

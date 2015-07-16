@@ -5,3 +5,9 @@ commands:
     class:
         usage:
         description:
+    configure:
+        usage:
+        description:
+    start:
+        usage:
+        description:
