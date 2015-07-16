@@ -12,20 +12,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.HashMap;
-import java.util.UUID;
-
-
 public class ClassCommand implements CommandExecutor {
-
-    public HashMap<UUID, Long> rangerList = new HashMap<UUID, Long>();
-    public HashMap<UUID, Long> alchemistList = new HashMap<UUID, Long>();
-
-    public static HashMap tankList() {
-        HashMap<UUID, Long> tankList = new HashMap<UUID, Long>();
-
-      return tankList;
-    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String args[]) {
@@ -156,7 +143,7 @@ public class ClassCommand implements CommandExecutor {
                     return false;
                 }
                 if (args[0] == null) {
-                    sender.sendMessage("You need to enter a valid class.");
+                    sender.sendMessage("You need to enter a vaild class.");
                     return true;
                 }
                 sender.sendMessage("Invaid Class");

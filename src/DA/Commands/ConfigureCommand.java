@@ -45,7 +45,7 @@ public class ConfigureCommand implements CommandExecutor {
                     if (args[0].equalsIgnoreCase("alchemist")) {
                         Location ploc = player.getLocation();
 
-                        plugin.getConfig().set("Class.alchemist.Spawn", ploc);
+                        plugin.getConfig().set("Class.Alchemist.Spawn", ploc);
                         sender.sendMessage(ChatColor.BLUE + "Alchemist spawn set.");
                         plugin.saveConfig();
                         return true;
