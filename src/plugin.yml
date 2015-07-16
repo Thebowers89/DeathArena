@@ -1,5 +1,5 @@
 name: DeathArena
-main: DeathArenaMain
+main: DA.DeathArenaMain
 version: 0.1
 commands:
     class:
