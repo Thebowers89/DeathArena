@@ -6,13 +6,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class DeathArenaMain extends JavaPlugin {
     @Override
     public void onEnable() {
-        saveDefaultConfig();
         registerCommands();
     }
 
     private void registerCommands() {
-        getCommand("class").setExecutor(new ClassCommand());
-        //getCommand("start").setExecutor(new StartCommand(this));
+        getCommand("class").setExecutor(new ClassCommand(this));
+        getCommand("start").setExecutor(new StartCommand(this));
         getCommand("configure").setExecutor(new ConfigureCommand(this));
+        getCommand("summonboss").setExecutor(new BossSummonCommand(this));
     }
 }

@@ -11,3 +11,6 @@ commands:
     start:
         usage:
         description:
+    summonboss:
+        usage:
+        description:

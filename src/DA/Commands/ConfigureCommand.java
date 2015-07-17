@@ -1,5 +1,6 @@
 package DA.Commands;
 
+import DA.Commands.StartCommand;
 import DA.DeathArenaMain;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -28,7 +29,11 @@ public class ConfigureCommand implements CommandExecutor {
                     if (args[0].equalsIgnoreCase("tank")) {
                         Location ploc = player.getLocation();
 
-                        plugin.getConfig().set("Class.Tank.Spawn", ploc);
+                        plugin.getConfig().set("Class.Tank.location.X", ploc.getX());
+                        plugin.getConfig().set("Class.Tank.location.World", ploc.getWorld().getName());
+                        plugin.getConfig().set("Class.Tank.location.Y", ploc.getY());
+                        plugin.getConfig().set("Class.Tank.location.Z", ploc.getZ());
+
                         sender.sendMessage(ChatColor.DARK_RED + "Tank spawn set.");
                         plugin.saveConfig();
                         return true;
@@ -36,7 +41,12 @@ public class ConfigureCommand implements CommandExecutor {
                     if (args[0].equalsIgnoreCase("ranger")) {
                         Location ploc = player.getLocation();
 
-                        plugin.getConfig().set("Class.Ranger.Spawn", ploc);
+                        plugin.getConfig().set("Class.Ranger.location.X", ploc.getX());
+                        plugin.getConfig().set("Class.Ranger.location.World", ploc.getWorld().getName());
+                        plugin.getConfig().set("Class.Ranger.location.Y", ploc.getY());
+                        plugin.getConfig().set("Class.Ranger.location.Z", ploc.getZ());
+
+
                         sender.sendMessage(ChatColor.GREEN + "Ranger spawn set.");
                         plugin.saveConfig();
                         return true;
@@ -45,11 +55,28 @@ public class ConfigureCommand implements CommandExecutor {
                     if (args[0].equalsIgnoreCase("alchemist")) {
                         Location ploc = player.getLocation();
 
-                        plugin.getConfig().set("Class.Alchemist.Spawn", ploc);
+                        plugin.getConfig().set("Class.Alchemist.location.X", ploc.getX());
+                        plugin.getConfig().set("Class.Alchemist.location.World", ploc.getWorld().getName());
+                        plugin.getConfig().set("Class.Alchemist.location.Y", ploc.getY());
+                        plugin.getConfig().set("Class.Alchemist.location.Z", ploc.getZ());
+
+
                         sender.sendMessage(ChatColor.BLUE + "Alchemist spawn set.");
                         plugin.saveConfig();
                         return true;
 
+                    }
+                    if (args[0].equalsIgnoreCase("boss")) {
+                        Location ploc = player.getLocation();
+
+                        plugin.getConfig().set("Class.Boss.location.X", ploc.getX());
+                        plugin.getConfig().set("Class.Boss.location.World", ploc.getWorld().getName());
+                        plugin.getConfig().set("Class.Boss.location.Y", ploc.getY());
+                        plugin.getConfig().set("Class.Boss.location.Z", ploc.getZ());
+
+                        sender.sendMessage(ChatColor.GOLD + "Boss spawn set.");
+                        plugin.saveConfig();
+                        return true;
                     }
                     if (args[0].equalsIgnoreCase("reload")) {
                         plugin.reloadConfig();
