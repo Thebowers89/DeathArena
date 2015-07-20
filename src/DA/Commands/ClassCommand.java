@@ -60,7 +60,9 @@ public class ClassCommand implements CommandExecutor {
                         sword.addEnchantment(Enchantment.DAMAGE_UNDEAD, 2);
                         sword.addEnchantment(Enchantment.DAMAGE_ALL, 4);
                         ItemStack food = new ItemStack(Material.COOKED_BEEF, 32);
+                        ItemStack gApple = new ItemStack(Material.GOLDEN_APPLE, 16);
 
+                        pi.setItem(2, gApple);
                         pi.setItem(1, food);
                         pi.setItem(39, helmet);
                         pi.setItem(38, chest);
@@ -84,13 +86,13 @@ public class ClassCommand implements CommandExecutor {
 
                         ItemStack arrow = new ItemStack(Material.ARROW, 1);
                         ItemStack helmet = new ItemStack(Material.LEATHER_HELMET, 1);
-                        helmet.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+                        helmet.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
                         ItemStack chest = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
-                        chest.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+                        chest.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
                         ItemStack leg = new ItemStack(Material.LEATHER_LEGGINGS, 1);
-                        leg.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+                        leg.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
                         ItemStack boot = new ItemStack(Material.LEATHER_BOOTS);
-                        boot.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+                        boot.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
                         ItemStack bow = new ItemStack(Material.BOW, 1);
                         bow.addEnchantment(Enchantment.ARROW_INFINITE, 1);
                         bow.addEnchantment(Enchantment.ARROW_DAMAGE, 5);
@@ -118,16 +120,16 @@ public class ClassCommand implements CommandExecutor {
 
                         player.teleport(new Location(w, x, y, z));
 
-                        ItemStack helmet = new ItemStack(Material.LEATHER_HELMET, 1);
+                        ItemStack helmet = new ItemStack(Material.CHAINMAIL_HELMET, 1);
                         helmet.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
                         helmet.addEnchantment(Enchantment.DURABILITY, 3);
-                        ItemStack chest = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
+                        ItemStack chest = new ItemStack(Material.CHAINMAIL_CHESTPLATE, 1);
                         chest.addEnchantment(Enchantment.DURABILITY, 3);
                         chest.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
-                        ItemStack leg = new ItemStack(Material.LEATHER_LEGGINGS, 1);
+                        ItemStack leg = new ItemStack(Material.CHAINMAIL_LEGGINGS, 1);
                         leg.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
                         leg.addEnchantment(Enchantment.DURABILITY, 3);
-                        ItemStack boot = new ItemStack(Material.LEATHER_BOOTS, 1);
+                        ItemStack boot = new ItemStack(Material.CHAINMAIL_BOOTS, 1);
                         boot.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
                         boot.addEnchantment(Enchantment.DURABILITY, 3);
                         ItemStack sword = new ItemStack(Material.WOOD_SWORD, 1);
@@ -138,13 +140,15 @@ public class ClassCommand implements CommandExecutor {
                         ItemStack bottle = new ItemStack(Material.GLASS_BOTTLE, 24);
                         ItemStack eye = new ItemStack(Material.SPIDER_EYE, 4);
                         ItemStack melon = new ItemStack(Material.SPECKLED_MELON, 8);
-                        ItemStack feather = new ItemStack(Material.FEATHER, 4);
+                        ItemStack feather = new ItemStack(Material.SUGAR, 4);
                         ItemStack cream = new ItemStack(Material.MAGMA_CREAM, 2);
                         ItemStack rstone = new ItemStack(Material.REDSTONE, 24);
                         ItemStack powder = new ItemStack(Material.SULPHUR, 24);
                         ItemStack gcarrot = new ItemStack(Material.GOLDEN_CARROT, 1);
                         ItemStack tear = new ItemStack(Material.GHAST_TEAR, 4);
                         ItemStack bpowder = new ItemStack(Material.BLAZE_POWDER, 2);
+                        ItemStack gStone = new ItemStack(Material.GLOWSTONE_DUST, 24);
+                        ItemStack nWart = new ItemStack(Material.NETHER_STALK, 8);
 
                         pi.setItem(9, feye);
                         pi.setItem(10, bottle);
@@ -157,6 +161,8 @@ public class ClassCommand implements CommandExecutor {
                         pi.setItem(17, gcarrot);
                         pi.setItem(18, tear);
                         pi.setItem(19, bpowder);
+                        pi.setItem(20, gStone);
+                        pi.setItem(21, nWart);
 
                         pi.setItem(2, ItemStacks.food());
                         pi.setItem(1, gapple);
@@ -182,6 +188,8 @@ public class ClassCommand implements CommandExecutor {
                             pi.addItem(bow);
                             pi.addItem(arrow);
                             pi.addItem(sword);
+                            pi.addItem(ItemStacks.trashzom());
+                            playersList.remove(player.getUniqueId());
                             return true;
                         }
                         return false;

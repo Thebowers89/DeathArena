@@ -1,7 +1,10 @@
 package DA;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Zombie;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class ZombieBoss {
 
@@ -15,9 +18,9 @@ public class ZombieBoss {
         Zombie z = (Zombie) boss.getWorld().spawn(boss, Zombie.class);
 
         if (z.isBaby() == true) {
-            z.setCustomName("Baby Shia");
+            z.setCustomName(ChatColor.RED + "Baby Labeouf");
         }else{
-            z.setCustomName("Shia");
+            z.setCustomName(ChatColor.RED + "Shia Labeouf");
         }
         z.setCustomNameVisible(true);
         z.setMaxHealth(250.0);
@@ -32,6 +35,8 @@ public class ZombieBoss {
         z.getEquipment().setBootsDropChance(0.0f);
         z.getEquipment().setItemInHand(ItemStacks.bSword());
         z.getEquipment().setItemInHandDropChance(0.0f);
+        z.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 25000, 3));
+        z.setRemoveWhenFarAway(false);
 
         return z;
     }
