@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Death Arena 2">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="Death Arena 2.jar">
+      <element id="module-output" name="DeathArena" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />
+    </root>
+  </artifact>
+</component>
